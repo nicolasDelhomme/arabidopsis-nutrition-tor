@@ -17,24 +17,19 @@ suppressPackageStartupMessages({
 source(here("UPSCb-common/src/R/featureSelection.R"))
 
 #' # Data
-vst <- read_tsv(here("data/analysis/salmon/model-aware_variance-stabilised-data.tsv"),
-                col_types=cols(.default=col_double(),rowname=col_character())) %>% 
-  column_to_rownames("rowname")
+vst <- read.csv(here("ForSeidr.csv"))
+rownames(vst) <- vst$X
+vst <- vst[,2:length(vst)]
 
-samples <- read_csv(here("doc/droughtneedles.csv"),
-                    col_types=cols(
-                      col_character(),
-                      col_character(),
-                      col_factor()
-                    )) %>% 
-  mutate(SampleID=sub("_.*","",SciLifeID))
+samples <- read.csv("/mnt/picea/projects/arabidopsis/jhanson/arabidopsis-nutrition-TOR/analysis_Tom/samplelist.csv")
+
 
 stopifnot(all(samples$SampleID == colnames(vst)))
 
 #' # Filter
 sels <- rangeFeatureSelect(counts=as.matrix(vst),
-                           conditions=samples$Level,
-                           nrep=3)
+                           conditions=samples$Conditions,
+                           nrep=2)
 
 vst.cutoff <- 1
 
