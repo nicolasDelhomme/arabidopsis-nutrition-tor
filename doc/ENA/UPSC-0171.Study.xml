@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STUDY_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://webin.ebi.ac.uk/meta/xsd/sra_1_5/SRA.study.xsd">
+ <STUDY alias="UPSC-0171" center_name="UPSC">
+  <DESCRIPTOR>
+   <STUDY_TITLE>Phosphate starvation response recruits the TOR pathway to regulate growth in Arabidopsis cell cultures</STUDY_TITLE>
+   <STUDY_TYPE existing_study_type="RNASeq"/>
+   <STUDY_ABSTRACT>TOR (Target Of Rapamycin) is a conserved regulator of growth in eukaryotes integrating both endogenous and exogenous signals. These signals include the internal nutritional status and it has been shown, in plants, to be regulated by carbon, nitrogen and sulphur availability. In this study, we show that the TOR pathway also integrates phosphorus availability to actively modulate the cell cycle in Arabidopsis. We observed a strong overlap between the phenotypic, metabolic and transcriptomic responses of TOR inactivation and phosphorus starvation in Arabidopsis cell culture. Although phosphorus availability modulates TOR activity, changes in the levels of TOR activity does not alter the expression of marker genes for phosphorus status. This data prompted us to place the sensing of phosphorus availability upstream of the modulation of TOR activity which, in turn, regulates the cell cycle and the primary metabolism to adjust growth in plants.</STUDY_ABSTRACT>
+  </DESCRIPTOR>
+ </STUDY>
+</STUDY_SET>

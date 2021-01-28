@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUBMISSION_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://webin.ebi.ac.uk/meta/xsd/sra_1_5/SRA.submission.xsd">
+ <SUBMISSION alias="UPSC-0171" center_name="UPSC">
+  <ACTIONS>
+   <ACTION>
+    <ADD source="UPSC-0171.Study.xml" schema="study"/>
+   </ACTION>
+   <ACTION>
+    <ADD source="UPSC-0171.Sample.xml" schema="sample"/>
+   </ACTION>
+   <ACTION>
+    <ADD source="UPSC-0171.Experiment.xml" schema="experiment"/>
+   </ACTION>
+   <ACTION>
+    <ADD source="UPSC-0171.Run.xml" schema="run"/>
+   </ACTION>
+   <ACTION>
+    <HOLD HoldUntilDate="2023-01-17"/>
+   </ACTION>
+  </ACTIONS>
+ </SUBMISSION>
+</SUBMISSION_SET>

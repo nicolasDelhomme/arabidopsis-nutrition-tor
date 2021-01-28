@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAMPLE_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://webin.ebi.ac.uk/meta/xsd/sra_1_5/SRA.sample.xsd">
+ <SAMPLE alias="UPSC-0171-S0001" center_name="UPSC">
+  <TITLE>I0-18</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I0-18 collected after 0 hours  </DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0002" center_name="UPSC">
+  <TITLE>I6-1</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-1 collected after 6 hours with nutrition NPS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0003" center_name="UPSC">
+  <TITLE>I6-2</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-2 collected after 6 hours with nutrition NPS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0004" center_name="UPSC">
+  <TITLE>I6-3</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-3 collected after 6 hours with nutrition NPS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0005" center_name="UPSC">
+  <TITLE>I6-5</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-5 collected after 6 hours with nutrition NPS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0006" center_name="UPSC">
+  <TITLE>I6-6</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-6 collected after 6 hours with nutrition NPS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0007" center_name="UPSC">
+  <TITLE>I6-7</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-7 collected after 6 hours with nutrition NP and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0008" center_name="UPSC">
+  <TITLE>I6-8</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-8 collected after 6 hours with nutrition NP and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0009" center_name="UPSC">
+  <TITLE>I6-9</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-9 collected after 6 hours with nutrition NP and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0010" center_name="UPSC">
+  <TITLE>I6-10</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-10 collected after 6 hours with nutrition NP and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0011" center_name="UPSC">
+  <TITLE>I6-11</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-11 collected after 6 hours with nutrition NP and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0012" center_name="UPSC">
+  <TITLE>I6-12</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-12 collected after 6 hours with nutrition NP and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0013" center_name="UPSC">
+  <TITLE>I6-19</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-19 collected after 6 hours with nutrition NS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0014" center_name="UPSC">
+  <TITLE>I6-20</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-20 collected after 6 hours with nutrition NS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0015" center_name="UPSC">
+  <TITLE>I6-21</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-21 collected after 6 hours with nutrition NS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0016" center_name="UPSC">
+  <TITLE>I6-22</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-22 collected after 6 hours with nutrition NS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0017" center_name="UPSC">
+  <TITLE>I6-23</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-23 collected after 6 hours with nutrition NS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0018" center_name="UPSC">
+  <TITLE>I6-24</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I6-24 collected after 6 hours with nutrition NS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0019" center_name="UPSC">
+  <TITLE>I24-2</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-2 collected after 24 hours with nutrition NPS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0020" center_name="UPSC">
+  <TITLE>I24-3</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-3 collected after 24 hours with nutrition NPS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0021" center_name="UPSC">
+  <TITLE>I24-4</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-4 collected after 24 hours with nutrition NPS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0022" center_name="UPSC">
+  <TITLE>I24-5</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-5 collected after 24 hours with nutrition NPS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0023" center_name="UPSC">
+  <TITLE>I24-7</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-7 collected after 24 hours with nutrition NP and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0024" center_name="UPSC">
+  <TITLE>I24-9</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-9 collected after 24 hours with nutrition NP and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0025" center_name="UPSC">
+  <TITLE>I24-10</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-10 collected after 24 hours with nutrition NP and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0026" center_name="UPSC">
+  <TITLE>I24-11</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-11 collected after 24 hours with nutrition NP and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0027" center_name="UPSC">
+  <TITLE>I24-12</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-12 collected after 24 hours with nutrition NP and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0028" center_name="UPSC">
+  <TITLE>I24-19</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-19 collected after 24 hours with nutrition NS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0029" center_name="UPSC">
+  <TITLE>I24-21</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample I24-21 collected after 24 hours with nutrition NS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0030" center_name="UPSC">
+  <TITLE>J0-5</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J0-5 collected after 0 hours  </DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0031" center_name="UPSC">
+  <TITLE>J0-7</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J0-7 collected after 0 hours  </DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0032" center_name="UPSC">
+  <TITLE>J0-11</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J0-11 collected after 0 hours  </DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0033" center_name="UPSC">
+  <TITLE>J0-13</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J0-13 collected after 0 hours  </DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0034" center_name="UPSC">
+  <TITLE>J0-17</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J0-17 collected after 0 hours  </DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0035" center_name="UPSC">
+  <TITLE>J0-21</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J0-21 collected after 0 hours  </DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0036" center_name="UPSC">
+  <TITLE>J0-23</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J0-23 collected after 0 hours  </DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0037" center_name="UPSC">
+  <TITLE>J6-4</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J6-4 collected after 6 hours with nutrition NPS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0038" center_name="UPSC">
+  <TITLE>J24-1</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J24-1 collected after 24 hours with nutrition NPS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0039" center_name="UPSC">
+  <TITLE>J24-6</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J24-6 collected after 24 hours with nutrition NPS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0040" center_name="UPSC">
+  <TITLE>J24-8</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J24-8 collected after 24 hours with nutrition NP and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0041" center_name="UPSC">
+  <TITLE>J24-20</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J24-20 collected after 24 hours with nutrition NS and treatment DMSO</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0042" center_name="UPSC">
+  <TITLE>J24-22</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J24-22 collected after 24 hours with nutrition NS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0043" center_name="UPSC">
+  <TITLE>J24-23</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J24-23 collected after 24 hours with nutrition NS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+ <SAMPLE alias="UPSC-0171-S0044" center_name="UPSC">
+  <TITLE>J24-24</TITLE>
+  <SAMPLE_NAME>
+   <TAXON_ID>3702</TAXON_ID>
+   <SCIENTIFIC_NAME>Arabidopsis thaliana</SCIENTIFIC_NAME>
+   <COMMON_NAME>mouse-ear cress</COMMON_NAME>
+  </SAMPLE_NAME>
+  <DESCRIPTION>Sample J24-24 collected after 24 hours with nutrition NS and treatment AZD</DESCRIPTION>
+ </SAMPLE>
+</SAMPLE_SET>
