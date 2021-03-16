@@ -17,7 +17,7 @@ suppressPackageStartupMessages({
 source(here("UPSCb-common/src/R/featureSelection.R"))
 
 #' # Data
-vst <- read.csv(here("ForSeidr.csv"))
+vst <- read.csv(here("data/seidr/ForSeidr.csv"))
 rownames(vst) <- vst$X
 vst <- vst[,2:length(vst)]
 

@@ -115,5 +115,6 @@ stopifnot(all(colnames(transcripto) == colnames(lipids)))
 
 #' ## Preparation of the table
 table <- rbind(transcripto,metabolomics,lipids)
-write.csv(table,here("ForSeidr.csv"),row.names=T)
+dir.create(here("data/seidr"),showWarnings=FALSE,recursive=TRUE)
+write.csv(table,here("data/seidr/ForSeidr.csv"),row.names=TRUE)
 
