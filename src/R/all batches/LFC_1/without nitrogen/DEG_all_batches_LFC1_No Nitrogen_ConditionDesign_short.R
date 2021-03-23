@@ -45,7 +45,7 @@ suppressPackageStartupMessages({
 })
 
 #' * Cutoff
-#' Different from Schurch et al., RNA, 2016 (LFC at 1 instead of 0,5)
+#' Different from Schurch et al., RNA, 2016
 lfc <- 0.5
 FDR <- 0.01
 
@@ -61,7 +61,7 @@ mar <- par("mar")
 #' # Raw data
 #' ## Loading of sample information
 #' * Read the sample information
-samples <- read.csv("~/Git/UPSCb/projects/arabidopsis-nutrition-TOR/doc/samples3.csv")
+samples <- read.csv("~/Git/arabidopsis-nutrition-tor/doc/samples3.csv")
 
 #' * Remove unnecessary samples
 samples %<>% filter(!grepl("P11554_1",SciLifeID)) %>% 
@@ -71,8 +71,7 @@ samples %<>% filter(!grepl("P11554_1",SciLifeID)) %>%
                         "P13406_102",
                         "P14066_131")) %>%
     filter(! Nutrition == "PKS") %>%
-    mutate(Nutrition,Nutrition=relevel(Nutrition,"NPS")) %>% 
-    mutate(AZD,AZD=relevel(AZD,"DMSO"))
+    mutate(Nutrition=relevel(as.factor(Nutrition),"NPS"),AZD=relevel(as.factor(AZD),"DMSO"))
 
 samples <- samples[order(samples$Timepoint, samples$Nutrition, samples$AZD),]
 
@@ -1106,6 +1105,358 @@ heatmap.2(AvgTOR_norm,
 
 
 
+
+#' ## Proteasome
+#' ### List of genes coding for the 19S proteasome
+sel1 <- c("AT1G04810","AT1G09100","AT1G45000","AT1G53750","AT1G64520","AT2G20140","AT2G20580",
+          "AT2G32730","AT3G05530","AT4G19006","AT4G24820","AT4G28470","AT4G29040","AT4G38630",
+          "AT5G05780","AT5G09900","AT5G19990","AT5G20000","AT5G43010","AT5G45620","AT5G58290",
+          "AT5G64760") 
+
+
+#' ### Preparation of the expression table for the shortlisted genes
+AvgTOR <- Avg[match(sel1,rownames(Avg)),]
+SDTOR <- SD[match(sel1,rownames(SD)),]
+
+#' ### Graphical representations
+#' #### Combined barplots
+barcenters <- barplot(AvgTOR,beside=T, cex.names=0.7,legend.text = sel1,ylim=c(0,4))
+arrows(x0=barcenters, x1=barcenters, y0=AvgTOR-SDTOR, y1=AvgTOR+SDTOR,
+       lwd=1.5, angle=90, length=0.05,code=3)
+
+#' #### Separated barplots
+for (i in 1:length(AvgTOR[,1])){
+  barcenters <- barplot(AvgTOR[i,],beside=T, cex.names=0.7,legend.text = sel1[i],ylim=c(0,4))
+  arrows(x0=barcenters, x1=barcenters, y0=AvgTOR[i,]-SDTOR[i,], y1=AvgTOR[i,]+SDTOR[i,],
+         lwd=1.5, angle=90, length=0.2,code=3)
+}
+
+
+#' #### Individual graphs without colors
+for (i in 1:length(AvgTOR[,1]))
+{
+  plot(AvgTOR[i,],ylim=c(min(AvgTOR[i,]-SDTOR[i,]),max(AvgTOR[i,]+SDTOR[i,])),
+       xaxt="n",xlab="",ylab=sprintf("gene = %s",rownames(AvgTOR)[i]))
+  axis(side = 1,at=1:13, colnames(AvgTOR),cex.axis=0.7,las=2)
+  arrows(x0=1:length(AvgTOR[i,]), x1=1:length(AvgTOR[i,]),
+         y0=AvgTOR[i,]-SDTOR[i,], y1=AvgTOR[i,]+SDTOR[i,],
+         lwd=1.5, angle=90, length=0.05,code=3)
+}
+
+#' #### Individual graphs with colors
+a <- matrix(NA, nrow=6, ncol=3)
+colnames(a) <- c(0,6,24)
+rownames(a) <- c("NPS_DMSO","NPS_AZD","NS_DMSO","NS_AZD","NP_DMSO","NP_AZD")
+b <- matrix(NA, nrow=6, ncol=3)
+colnames(b) <- c(0,6,24)
+rownames(b) <- c("NPS_DMSO","NPS_AZD","NS_DMSO","NS_AZD","NP_DMSO","NP_AZD")
+
+
+for (i in 1:length(AvgTOR[,1]))
+{
+  a[1:6,1] <- AvgTOR[i,1]
+  a[1:6,2] <- AvgTOR[i,2:7]
+  a[1:6,3] <- AvgTOR[i,8:13]
+  
+  b[1:6,1] <- SDTOR[i,1]
+  b[1:6,2] <- SDTOR[i,2:7]
+  b[1:6,3] <- SDTOR[i,8:13]
+  
+  plot(colnames(a),a[1,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),ylab=rownames(AvgTOR)[i])
+  lines(colnames(a),a[2,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),lty=2)
+  lines(colnames(a),a[3,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="turquoise")
+  lines(colnames(a),a[4,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="turquoise",lty=2)
+  lines(colnames(a),a[5,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="hotpink3")
+  lines(colnames(a),a[6,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="hotpink3",lty=2)
+  
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[1,] - b[1,],
+         y1=a[1,] + b[1,],
+         lwd=1, angle=90, length=0.05, code=3)
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[2,] - b[2,],
+         y1=a[2,] + b[2,],
+         lwd=1, angle=90, length=0.05, code=3)
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[3,] - b[3,],
+         y1=a[3,] + b[3,],
+         lwd=1, angle=90, length=0.05, code=3, col="turquoise")
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[4,] - b[4,],
+         y1=a[4,] + b[4,],
+         lwd=1, angle=90, length=0.05, code=3, col="turquoise")
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[5,] - b[5,],
+         y1=a[5,] + b[5,],
+         lwd=1, angle=90, length=0.05, code=3, col="hotpink3")
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[6,] - b[6,],
+         y1=a[6,] + b[6,],
+         lwd=1, angle=90, length=0.05, code=3, col="hotpink3")
+}
+
+#' #### Heatmap
+AvgTOR[AvgTOR == 0] <- 0.000001
+AvgTOR_norm <- log2(AvgTOR[,] / AvgTOR[,1])
+AvgTOR_norm[AvgTOR_norm < -0.5] <- -0.5; AvgTOR_norm[AvgTOR_norm > 0.5] <- 0.5
+
+
+heatmap.2(AvgTOR_norm,
+          col=hpal,
+          dendrogram="none",
+          trace="none",
+          Colv=FALSE,
+          Rowv=FALSE,
+          margins=c(8,12))
+
+heatmap.2(AvgTOR_norm,
+          col=hpal,
+          dendrogram="row",
+          trace="none",
+          Colv=FALSE,
+          margins=c(8,12),
+          hclustfun = function(X){hclust(X,method="ward.D2")})
+
+
+
+
+
+#' ### List of genes coding for the 20S proteasome
+sel1 <- c("AT1G13060","AT1G16470","AT1G21720","AT1G47250","AT1G53850","AT1G56450","AT1G77440",
+          "AT2G05840","AT2G27020","AT3G14290","AT3G22110","AT3G22630","AT3G27430","AT3G51260",
+          "AT3G60820","AT4G14800","AT4G31300","AT5G35590","AT5G40580","AT5G66140") 
+
+
+#' ### Preparation of the expression table for the shortlisted genes
+AvgTOR <- Avg[match(sel1,rownames(Avg)),]
+SDTOR <- SD[match(sel1,rownames(SD)),]
+
+#' ### Graphical representations
+#' #### Combined barplots
+barcenters <- barplot(AvgTOR,beside=T, cex.names=0.7,legend.text = sel1,ylim=c(0,4))
+arrows(x0=barcenters, x1=barcenters, y0=AvgTOR-SDTOR, y1=AvgTOR+SDTOR,
+       lwd=1.5, angle=90, length=0.05,code=3)
+
+#' #### Separated barplots
+for (i in 1:length(AvgTOR[,1])){
+  barcenters <- barplot(AvgTOR[i,],beside=T, cex.names=0.7,legend.text = sel1[i],ylim=c(0,4))
+  arrows(x0=barcenters, x1=barcenters, y0=AvgTOR[i,]-SDTOR[i,], y1=AvgTOR[i,]+SDTOR[i,],
+         lwd=1.5, angle=90, length=0.2,code=3)
+}
+
+
+#' #### Individual graphs without colors
+for (i in 1:length(AvgTOR[,1]))
+{
+  plot(AvgTOR[i,],ylim=c(min(AvgTOR[i,]-SDTOR[i,]),max(AvgTOR[i,]+SDTOR[i,])),
+       xaxt="n",xlab="",ylab=sprintf("gene = %s",rownames(AvgTOR)[i]))
+  axis(side = 1,at=1:13, colnames(AvgTOR),cex.axis=0.7,las=2)
+  arrows(x0=1:length(AvgTOR[i,]), x1=1:length(AvgTOR[i,]),
+         y0=AvgTOR[i,]-SDTOR[i,], y1=AvgTOR[i,]+SDTOR[i,],
+         lwd=1.5, angle=90, length=0.05,code=3)
+}
+
+#' #### Individual graphs with colors
+a <- matrix(NA, nrow=6, ncol=3)
+colnames(a) <- c(0,6,24)
+rownames(a) <- c("NPS_DMSO","NPS_AZD","NS_DMSO","NS_AZD","NP_DMSO","NP_AZD")
+b <- matrix(NA, nrow=6, ncol=3)
+colnames(b) <- c(0,6,24)
+rownames(b) <- c("NPS_DMSO","NPS_AZD","NS_DMSO","NS_AZD","NP_DMSO","NP_AZD")
+
+
+for (i in 1:length(AvgTOR[,1]))
+{
+  a[1:6,1] <- AvgTOR[i,1]
+  a[1:6,2] <- AvgTOR[i,2:7]
+  a[1:6,3] <- AvgTOR[i,8:13]
+  
+  b[1:6,1] <- SDTOR[i,1]
+  b[1:6,2] <- SDTOR[i,2:7]
+  b[1:6,3] <- SDTOR[i,8:13]
+  
+  plot(colnames(a),a[1,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),ylab=rownames(AvgTOR)[i])
+  lines(colnames(a),a[2,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),lty=2)
+  lines(colnames(a),a[3,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="turquoise")
+  lines(colnames(a),a[4,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="turquoise",lty=2)
+  lines(colnames(a),a[5,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="hotpink3")
+  lines(colnames(a),a[6,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="hotpink3",lty=2)
+  
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[1,] - b[1,],
+         y1=a[1,] + b[1,],
+         lwd=1, angle=90, length=0.05, code=3)
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[2,] - b[2,],
+         y1=a[2,] + b[2,],
+         lwd=1, angle=90, length=0.05, code=3)
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[3,] - b[3,],
+         y1=a[3,] + b[3,],
+         lwd=1, angle=90, length=0.05, code=3, col="turquoise")
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[4,] - b[4,],
+         y1=a[4,] + b[4,],
+         lwd=1, angle=90, length=0.05, code=3, col="turquoise")
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[5,] - b[5,],
+         y1=a[5,] + b[5,],
+         lwd=1, angle=90, length=0.05, code=3, col="hotpink3")
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[6,] - b[6,],
+         y1=a[6,] + b[6,],
+         lwd=1, angle=90, length=0.05, code=3, col="hotpink3")
+}
+
+#' #### Heatmap
+AvgTOR[AvgTOR == 0] <- 0.000001
+AvgTOR_norm <- log2(AvgTOR[,] / AvgTOR[,1])
+AvgTOR_norm[AvgTOR_norm < -0.5] <- -0.5; AvgTOR_norm[AvgTOR_norm > 0.5] <- 0.5
+
+
+heatmap.2(AvgTOR_norm,
+          col=hpal,
+          dendrogram="none",
+          trace="none",
+          Colv=FALSE,
+          Rowv=FALSE,
+          margins=c(8,12))
+
+heatmap.2(AvgTOR_norm,
+          col=hpal,
+          dendrogram="row",
+          trace="none",
+          Colv=FALSE,
+          margins=c(8,12),
+          hclustfun = function(X){hclust(X,method="ward.D2")})
+
+
+
+#' ## Cell cycle genes according to Desvies, Arana-Echarry, Barea and Gutierrez, 2020
+#' ### List of genes 
+sel1 <- c("AT2G31270", "AT5G10390", "AT4G37490") 
+
+
+#' ### Preparation of the expression table for the shortlisted genes
+AvgTOR <- Avg[match(sel1,rownames(Avg)),]
+SDTOR <- SD[match(sel1,rownames(SD)),]
+
+#' ### Graphical representations
+#' #### Combined barplots
+barcenters <- barplot(AvgTOR,beside=T, cex.names=0.7,legend.text = sel1,ylim=c(0,4))
+arrows(x0=barcenters, x1=barcenters, y0=AvgTOR-SDTOR, y1=AvgTOR+SDTOR,
+       lwd=1.5, angle=90, length=0.05,code=3)
+
+#' #### Separated barplots
+for (i in 1:length(AvgTOR[,1])){
+  barcenters <- barplot(AvgTOR[i,],beside=T, cex.names=0.7,legend.text = sel1[i],ylim=c(0,4))
+  arrows(x0=barcenters, x1=barcenters, y0=AvgTOR[i,]-SDTOR[i,], y1=AvgTOR[i,]+SDTOR[i,],
+         lwd=1.5, angle=90, length=0.2,code=3)
+}
+
+
+#' #### Individual graphs without colors
+for (i in 1:length(AvgTOR[,1]))
+{
+  plot(AvgTOR[i,],ylim=c(min(AvgTOR[i,]-SDTOR[i,]),max(AvgTOR[i,]+SDTOR[i,])),
+       xaxt="n",xlab="",ylab=sprintf("gene = %s",rownames(AvgTOR)[i]))
+  axis(side = 1,at=1:13, colnames(AvgTOR),cex.axis=0.7,las=2)
+  arrows(x0=1:length(AvgTOR[i,]), x1=1:length(AvgTOR[i,]),
+         y0=AvgTOR[i,]-SDTOR[i,], y1=AvgTOR[i,]+SDTOR[i,],
+         lwd=1.5, angle=90, length=0.05,code=3)
+}
+
+#' #### Individual graphs with colors
+a <- matrix(NA, nrow=6, ncol=3)
+colnames(a) <- c(0,6,24)
+rownames(a) <- c("NPS_DMSO","NPS_AZD","NS_DMSO","NS_AZD","NP_DMSO","NP_AZD")
+b <- matrix(NA, nrow=6, ncol=3)
+colnames(b) <- c(0,6,24)
+rownames(b) <- c("NPS_DMSO","NPS_AZD","NS_DMSO","NS_AZD","NP_DMSO","NP_AZD")
+
+
+for (i in 1:length(AvgTOR[,1]))
+{
+  a[1:6,1] <- AvgTOR[i,1]
+  a[1:6,2] <- AvgTOR[i,2:7]
+  a[1:6,3] <- AvgTOR[i,8:13]
+  
+  b[1:6,1] <- SDTOR[i,1]
+  b[1:6,2] <- SDTOR[i,2:7]
+  b[1:6,3] <- SDTOR[i,8:13]
+  
+  plot(colnames(a),a[1,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),ylab=rownames(AvgTOR)[i])
+  lines(colnames(a),a[2,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),lty=2)
+  lines(colnames(a),a[3,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="turquoise")
+  lines(colnames(a),a[4,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="turquoise",lty=2)
+  lines(colnames(a),a[5,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="hotpink3")
+  lines(colnames(a),a[6,], type="l",ylim=c(min(a)-max(b),max(a)+max(b)),col="hotpink3",lty=2)
+  
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[1,] - b[1,],
+         y1=a[1,] + b[1,],
+         lwd=1, angle=90, length=0.05, code=3)
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[2,] - b[2,],
+         y1=a[2,] + b[2,],
+         lwd=1, angle=90, length=0.05, code=3)
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[3,] - b[3,],
+         y1=a[3,] + b[3,],
+         lwd=1, angle=90, length=0.05, code=3, col="turquoise")
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[4,] - b[4,],
+         y1=a[4,] + b[4,],
+         lwd=1, angle=90, length=0.05, code=3, col="turquoise")
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[5,] - b[5,],
+         y1=a[5,] + b[5,],
+         lwd=1, angle=90, length=0.05, code=3, col="hotpink3")
+  arrows(x0=c(0,6,24),
+         x1=c(0,6,24),
+         y0=a[6,] - b[6,],
+         y1=a[6,] + b[6,],
+         lwd=1, angle=90, length=0.05, code=3, col="hotpink3")
+}
+
+#' #### Heatmap
+AvgTOR[AvgTOR == 0] <- 0.000001
+AvgTOR_norm <- log2(AvgTOR[,] / AvgTOR[,1])
+AvgTOR_norm[AvgTOR_norm < -0.5] <- -0.5; AvgTOR_norm[AvgTOR_norm > 0.5] <- 0.5
+
+
+heatmap.2(AvgTOR_norm,
+          col=hpal,
+          dendrogram="none",
+          trace="none",
+          Colv=FALSE,
+          Rowv=FALSE,
+          margins=c(8,12))
+
+heatmap.2(AvgTOR_norm,
+          col=hpal,
+          dendrogram="row",
+          trace="none",
+          Colv=FALSE,
+          margins=c(8,12),
+          hclustfun = function(X){hclust(X,method="ward.D2")})
 
 
 

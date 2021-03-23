@@ -47,7 +47,7 @@ suppressPackageStartupMessages({
 })
 
 #' * Cutoff
-#' Different from Schurch et al., RNA, 2016 (LFC at 1 instead of 0,5)
+#' Different from Schurch et al., RNA, 2016
 lfc <- 0.5
 FDR <- 0.01
 
