@@ -16,3 +16,5 @@ In eukaryotes, TOR (Target Of Rapamycin) is a conserved regulator of growth that
 
 ## Repository
 This repository contains all the code needed to reproduce the RNA-Seq data analysis of the manuscript. For question, contact `nicolasDelhomme` on GitHub.
+
+Available on GitHub: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4608028.svg)](https://doi.org/10.5281/zenodo.4608028)
